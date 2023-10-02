@@ -2,7 +2,7 @@ package chap04;
 
 public class ChicagoStylePizzaStore extends PizzaStore {
 
-    Pizza createPizza(String item) {
+    public Pizza createPizza(String item) {
         if (item.equals("cheese")) {
             return new ChicagoStyleCheesePizza();
         } else if (item.equals("veggie")) {
