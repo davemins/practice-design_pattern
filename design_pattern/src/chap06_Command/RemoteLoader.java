@@ -24,8 +24,14 @@ public class RemoteLoader {
         remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
         remoteControl.setCommand(2, stereoOnWithCDCommand, stereoOffWithCDCommand);
 
+        // toString() 메소드로 리모컨 슬롯의 정보를 출력
         System.out.println(remoteControl);
 
         remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.offButtonWasPushed(1);
+        remoteControl.onButtonWasPushed(2);
+        remoteControl.offButtonWasPushed(2);
     }
 }
