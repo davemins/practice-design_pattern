@@ -1,8 +1,12 @@
-package chap10_State;
+package chap11_Proxy;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-
+public class GumballMachine
+        extends UnicastRemoteObject implements GumballMachineRemote
+{
+    private static final long serialVersionUID = 2L;
     State soldOutState;
     State noQuarterState;
     State hasQuarterState;
@@ -11,8 +15,9 @@ public class GumballMachine {
 
     State state = soldOutState;
     int count = 0;
+    String location;
 
-    public GumballMachine(int numberGumballs) {
+    public GumballMachine(String location, int numberGumballs) throws RemoteException {
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
@@ -23,7 +28,9 @@ public class GumballMachine {
         if (numberGumballs > 0) {
             state = noQuarterState;
         }
+        this.location = location;
     }
+
 
     public void insertQuarter() {
         state.insertQuarter();
@@ -38,29 +45,32 @@ public class GumballMachine {
         state.dispense();
     }
 
-    public void setState(State state) {
+    void setState(State state) {
         this.state = state;
     }
 
     void releaseBall() {
-        System.out.println("알맹이를 내보내고 있습니다.");
-        if (count > 0) {
+        System.out.println("A gumball comes rolling out the slot...");
+        if (count != 0) {
             count = count - 1;
         }
     }
 
-    int getCount() {
-        return count;
+    public void refill(int count) {
+        this.count = count;
+        state = noQuarterState;
     }
 
-    void refill(int count) {
-        this.count += count;
-        System.out.println("알맹이가 리필되었습니다. 리필 갯수 : " + this.count);
-        state.refill();
+    public int getCount() {
+        return count;
     }
 
     public State getState() {
         return state;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public State getSoldOutState() {
@@ -85,10 +95,14 @@ public class GumballMachine {
 
     public String toString() {
         StringBuffer result = new StringBuffer();
-        result.append("\n주식회사 왕뽑기");
-        result.append("\n자바로 돌아가는 최신형 뽑기 기계");
-        result.append("\n남은 개수: " + count + "개");
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\nJava-enabled Standing Gumball Model #2014");
+        result.append("\nInventory: " + count + " gumball");
+        if (count != 1) {
+            result.append("s");
+        }
         result.append("\n");
+        result.append("Machine is " + state + "\n");
         return result.toString();
     }
 }
