@@ -28,4 +28,8 @@ public class MenuItem {
     public boolean isVegetarian() {
         return vegetarian;
     }
+
+    public String toString() {
+        return(name + ", $" + price + "\n   " + description);
+    }
 }
