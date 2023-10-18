@@ -1,4 +1,4 @@
-package chap09_Iterator_Composite;
+package chap09_Iterator_Composite.Iterator;
 
 public class Waitress {
     Menu pancakeHouseMenu;
