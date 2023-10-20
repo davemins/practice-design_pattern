@@ -18,7 +18,7 @@ public class BeatModel implements BeatModelInterface, Runnable {
 
     public void initialize() {
         try {
-            File resource = new File("clap.wav");
+            File resource = new File("D:\\develop\\practice-design_pattern\\design_pattern\\src\\chap12_Combining\\MVC\\clap.wav");
             clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
             clip.open(AudioSystem.getAudioInputStream(resource));
         }
