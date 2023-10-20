@@ -1,4 +1,4 @@
-package chap12_Compound;
+package chap12_Combining;
 
 public class MallardDuck implements Quackable {
     Observable observable;

@@ -1,14 +1,17 @@
-package chap12_Compound;
+package chap12_Combining;
 
-public class DuckCall implements Quackable {
+public class GooseAdapter implements Quackable {
+    Goose goose;
     Observable observable;
 
-    public DuckCall() {
+    public GooseAdapter(Goose goose) {
+        this.goose = goose;
         observable = new Observable(this);
     }
 
+    @Override
     public void quack() {
-        System.out.println("꽉꽉");
+        goose.honk();
         notifyObservers();
     }
 
@@ -23,6 +26,6 @@ public class DuckCall implements Quackable {
     }
 
     public String toString() {
-        return "오리 호출기";
+        return "거위";
     }
 }

@@ -1,4 +1,4 @@
-package chap12_Compound;
+package chap12_Combining;
 
 import java.util.ArrayList;
 import java.util.Iterator;
