@@ -2,4 +2,6 @@
 
 ## strategy pattern
 
-## observer patter
+## observer pattern
+
+## decorator pattern
