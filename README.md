@@ -5,3 +5,5 @@
 ## observer pattern
 
 ## decorator pattern
+
+## factory pattern
