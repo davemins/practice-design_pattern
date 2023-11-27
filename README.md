@@ -7,3 +7,5 @@
 ## decorator pattern
 
 ## factory pattern
+
+## singleton pattern
