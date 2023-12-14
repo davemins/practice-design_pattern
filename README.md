@@ -1,5 +1,7 @@
 # practice design pattern
 
+&nbsp;
+
 ## strategy pattern
 변화하는 부분과 그대로 있는 부분
 
@@ -58,9 +60,7 @@ setQuackBehavior()
 
 패턴의 밑바닥 → 객체지향 패턴 (추상화, 캡슐화, 상속, 다형성)
 
-
-
-
+&nbsp;
 
 ## observer pattern
 새 소식을 알려줄 수 있는 패턴
@@ -102,9 +102,7 @@ JButton 객체 ⇒ JFrame에 추가
 
 MVC 패턴에도 응용이 가능하다
 
-
-
-
+&nbsp;
 
 ## decorator pattern
 데코레이터 패턴
@@ -150,9 +148,7 @@ java.io 패키지는 데코레이터 패턴을 바탕으로 만들어졌다
 
 단점 : 자잘한 클래스가 엄청나게 추가된다, 형식 문제, 초기화하는데 필요한 코드가 훨씬 복잡해진다, Factory, Builder 패턴이 도와줄 듯
 
-
-
-
+&nbsp;
 
 ## factory pattern
 불필요한 의존성을 없애서 결합 문제를 해결하는 방법
@@ -213,9 +209,7 @@ ingredient Factory 새로운 형식의 팩토리
 
 💡 **추상 팩토리 패턴** : 구상 클래스에 의존하지 않고도 서로 연관되거나 의존적인 객체로 이루어진 제품군을 생산하는 인터페이스를 제공합니다. 구상 클래스는 서브 클래스에서 만듭니다.
 
-
-
-
+&nbsp;
 
 ## singleton pattern
 인스턴스를 하나만 만들어야 하는 클래스
@@ -235,9 +229,7 @@ ingredient Factory 새로운 형식의 팩토리
 
 enum..? 신경쓸 것들이 존재한다
 
-
-
-
+&nbsp;
 
 ## command pattern
 캡슐화를 더 높은 수준으로..
@@ -275,9 +267,7 @@ undo 기능 추가 String Buffer
 
 지금까지 배웠던 것 중에 가장 유용한 것 같다.
 
-
-
-
+&nbsp;
 
 ## adapter pattern
 실제와 다른 인터페이스를 가진 것처럼 보이도록 객체 감싸기
@@ -317,6 +307,7 @@ Facade : 겉모양, 외관
 
 객체에 속하는 구성 요소
 
+&nbsp;
 
 
 
